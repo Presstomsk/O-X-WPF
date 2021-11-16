@@ -1,0 +1,58 @@
+﻿<Window x:Class="O_X.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:O_X"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary Source="DictionaryResource.xaml" />
+    </Window.Resources>
+    <Grid x:Name="CrossZero" >
+        
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Row="0" Grid.Column="0" ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition Width="*"/>                   
+                </Grid.ColumnDefinitions>
+                <Menu Grid.Row="0" Grid.Column="0" >
+
+                    <MenuItem Header="Меню">
+                    <MenuItem Header="Новая игра" >
+                        <MenuItem Header="Игра с человеком" Click="VsPersonGame_Click"></MenuItem>
+                        <MenuItem Header="Игра с компьютером" ></MenuItem>
+                    </MenuItem>                    
+                        <Separator />
+                        <MenuItem Header="Выход" Click="ProgramClose_Click"></MenuItem>
+                    </MenuItem>
+                </Menu>
+            </Grid>
+            <Button x:Name="_01"  Grid.Row="1" Grid.Column="0"  Style="{DynamicResource ButtonStyle}" Tag="0"  Click="Button_Click"/>
+            <Button x:Name="_02" Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_03" Grid.Column="2" Grid.Row="1" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_04" Grid.Column="0" Grid.Row="2" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_05" Grid.Column="1" Grid.Row="2" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_06" Grid.Column="2" Grid.Row="2" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_07" Grid.Column="0" Grid.Row="3" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_08" Grid.Column="1" Grid.Row="3" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+            <Button x:Name="_09" Grid.Column="2" Grid.Row="3" Style="{DynamicResource ButtonStyle}" Tag="0" Click="Button_Click"/>
+        </Grid>
+    
+</Window>
