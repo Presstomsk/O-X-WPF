@@ -14,28 +14,7 @@
                     <Border x:Name="bdOrange" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
                     Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}" Padding="{TemplateBinding Padding}">
                         <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
-                    </Border>
-                    <!--<ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="bdOrange" Duration="0:0:0.5"
-                                            Storyboard.TargetProperty="Background.Color"
-                                            To="#5ec1e6">
-                                    </ColorAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>-->
-                        <!--<EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Duration="0:0:0.5"
-                                            Storyboard.TargetProperty="Background.Color">
-                                    </ColorAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>-->
-                    <!--</ControlTemplate.Triggers>-->
+                    </Border>                    
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
