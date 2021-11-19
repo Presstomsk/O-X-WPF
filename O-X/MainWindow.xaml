@@ -37,7 +37,7 @@
                     <MenuItem Header="Меню">
                     <MenuItem Header="Новая игра" >
                         <MenuItem Header="Игра с человеком" Click="VsPersonGame_Click"></MenuItem>
-                        <MenuItem Header="Игра с компьютером" ></MenuItem>
+                        <MenuItem Header="Игра с компьютером" Click="VsComputerGame_Click"></MenuItem>
                     </MenuItem>                    
                         <Separator />
                         <MenuItem Header="Выход" Click="ProgramClose_Click"></MenuItem>
