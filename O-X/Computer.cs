@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+
 
 namespace O_X
 {
@@ -101,8 +95,10 @@ namespace O_X
             return null;
 
         }
+ 
 
-        public void StepCalculating()
+
+        public void StepCalculating() //Алгоритм вычисления ходов компьютера
         {
             var canWin = CanWin();
             var canLose = CanLose();

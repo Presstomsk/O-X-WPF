@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -14,22 +10,21 @@ namespace O_X
         FirstPlayer _first;   //первый игрок
         SecondPlayer _second; // второй игрок  
         Computer _computer;  //компьютер      
-        bool _queue;    // очередь
+        bool _queue;    // очередь         
         Dispatcher _disp;      //диспетчер       
         ResultChecker _resultChecker; // "проверяльщик" результата
-        Button[,] _buttons;        
+        Button[,] _buttons;  //кнопки      
         Panel _panel;
-        bool _comp;
-        public Logic(bool queue, Grid grid)
+        bool _comp = true; // true - игра с компьютером, false - игра с человеком;
+        public Logic(Grid grid)
         {
             _panel = grid;
             _first = new FirstPlayer();
             _second = new SecondPlayer();
             _buttons = Buttons();
             _computer = new Computer (_buttons);
-            _queue = queue;            
-            _disp = new Dispatcher(_first, _second, _computer, queue, _comp);      
-
+            _queue = true;            
+            _disp = new Dispatcher(_first, _second, _computer, _queue, _comp); 
             _resultChecker = new ResultChecker(_buttons);
         }
 
@@ -71,11 +66,6 @@ namespace O_X
                 Messages.GameResult(_resultChecker.Result());
             }
         }
-
-
-
-
-
 
 
     }

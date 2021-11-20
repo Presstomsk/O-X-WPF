@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Resources;
-using System.Windows.Shapes;
+
 
 namespace O_X
 {
     
     public partial class MainWindow : Window
-    {
-             
-        bool queue = true;    // очередь  
-      
+    {            
+       
         Logic logic; //логика событий
         
         public MainWindow()
         {
             InitializeComponent();                       
-            logic = new Logic(queue, CrossZero);        
+            logic = new Logic(CrossZero);        
         }
         private void ProgramClose_Click(object sender, RoutedEventArgs e) //Закрытие программы
         {            
@@ -42,10 +28,10 @@ namespace O_X
         {
             logic.NewGame(true); //режим против компьютера 
         }
-        private void Button_Click(object sender, RoutedEventArgs e) //Обработка нажатия кнопки : 0 - кнопка не нажата
+        private void Button_Click(object sender, RoutedEventArgs e) //Обработка нажатия кнопки 
         {
-            Button but = (Button)sender;
-            logic.Action(but);  
+            Button button = sender as Button;
+            logic.Action(button);  
         }
 
        
