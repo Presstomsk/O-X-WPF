@@ -63,8 +63,8 @@ namespace O_X
                 button.Background = _disp.Regulation(out string tag); // Установка фона
                 button.Tag = tag; //Установка Тэга: 1   
                 if (_comp) _disp.Regulation(out string tagnull);
-                Messages.GameResult(_resultChecker.Result());
-                NewGame(_comp);
+                if (Messages.GameResult(_resultChecker.Result())!=3) NewGame(_comp);
+               
             }
         }
 

@@ -34,6 +34,5 @@ namespace O_X
             logic.Action(button);  
         }
 
-       
     }
 }
