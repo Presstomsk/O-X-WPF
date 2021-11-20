@@ -10,29 +10,22 @@ using System.Windows.Media.Imaging;
 
 namespace O_X
 {
-    public class Computer //Компьютер
+    public class Computer : SecondPlayer //Компьютер
     {
         Button[,] _buttons;
 
         public Computer(Button[,] buttons)
         {
             _buttons = buttons;
-        }
+        }       
 
-        public ImageBrush OPainting() //Установка заднего фона "O" для компьютера
-        {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("zero.png", UriKind.Relative));
-            return brush;
-        }
-
-        public void ComputerStep(Button button) // Шаг компьютера
+        private void ComputerStep(Button button) // Шаг компьютера
         {
             button.Background = OPainting(); 
             button.Tag = "2";
         }
 
-        public Button CanWin() // проверка на возможность выйгрыша
+        private Button CanWin() // проверка на возможность выйгрыша
         {
             
                 for (int j = 0; j < 3; j++) // Проверяются горизонтали
@@ -70,7 +63,7 @@ namespace O_X
 
         }
 
-        public Button CanLose() // проверка на возможность пройгрыша
+        private Button CanLose() // проверка на возможность пройгрыша
         {
 
             for (int j = 0; j < 3; j++) // Проверяются горизонтали
