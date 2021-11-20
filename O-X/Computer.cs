@@ -95,8 +95,21 @@ namespace O_X
             return null;
 
         }
- 
 
+        private void GoToCorner() // ход в угол
+        {
+            for (int i = 0; i <= 2; i += 2)
+            {
+                for (int j = 0; j <= 2; j += 2)
+                {
+                    if ((string)_buttons[i, j].Tag == "0")
+                    {
+                        ComputerStep(_buttons[i, j]);
+                        return;
+                    }
+                }
+            }           
+        }
 
         public void StepCalculating() //Алгоритм вычисления ходов компьютера
         {
@@ -118,24 +131,9 @@ namespace O_X
                 ComputerStep(_buttons[1, 1]);
                 return;
             }
-            if ((string)_buttons[0, 0].Tag == "0")
+            else
             {
-                ComputerStep(_buttons[0, 0]);
-                return;
-            }
-            if ((string)_buttons[0, 2].Tag == "0")
-            {
-                ComputerStep(_buttons[0, 2]);
-                return;
-            }
-            if ((string)_buttons[2, 2].Tag == "0")
-            {
-                ComputerStep(_buttons[2, 2]);
-                return;
-            }
-            if ((string)_buttons[2, 0].Tag == "0")
-            {
-                ComputerStep(_buttons[2, 0]);
+                GoToCorner();
                 return;
             }
         }
