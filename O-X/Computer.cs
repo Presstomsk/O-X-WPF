@@ -96,7 +96,7 @@ namespace O_X
 
         }
 
-        private void GoToCorner() // ход в угол
+        private bool GoToCorner() // ход в угол
         {
             for (int i = 0; i <= 2; i += 2)
             {
@@ -105,10 +105,23 @@ namespace O_X
                     if ((string)_buttons[i, j].Tag == "0")
                     {
                         ComputerStep(_buttons[i, j]);
-                        return;
+                        return true;
                     }
                 }
-            }           
+            }
+            return false;
+        }
+
+        private void GoSideways() //ход в сторону
+        {
+            foreach (var item in _buttons)
+            {
+                if ((string)item.Tag == "0")
+                {
+                    ComputerStep(item);
+                    return;
+                }
+            }
         }
 
         public void StepCalculating() //Алгоритм вычисления ходов компьютера
@@ -133,9 +146,10 @@ namespace O_X
             }
             else
             {
-                GoToCorner();
-                return;
+                if(GoToCorner())return;
+                GoSideways();
             }
+            
         }
     }
 }
