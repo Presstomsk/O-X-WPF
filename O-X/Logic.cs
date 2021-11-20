@@ -64,6 +64,7 @@ namespace O_X
                 button.Tag = tag; //Установка Тэга: 1   
                 if (_comp) _disp.Regulation(out string tagnull);
                 Messages.GameResult(_resultChecker.Result());
+                NewGame(_comp);
             }
         }
 
